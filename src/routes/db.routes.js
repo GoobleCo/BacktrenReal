@@ -3,6 +3,16 @@ import { pool } from "../database.js";
 
 const router = Router();
 
+/**
+ * @openapi
+ * /db:
+ *   get:
+ *     tags: [Database]
+ *     summary: Verificar conexión a la base de datos
+ *     responses:
+ *       200:
+ *         description: Estado de la conexión a la base de datos
+ */
 router.get("/", async (req, res) => {
   try {
     const nowResult = await pool.query("SELECT NOW() AS now");
