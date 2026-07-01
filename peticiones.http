@@ -1,0 +1,47 @@
+@url=https://backtren-eight.vercel.app
+
+GET {{url}}/api/health
+
+###
+
+GET {{url}}/api/db
+
+###
+
+# Get all users
+GET {{url}}/api/users
+
+###
+
+# Get user by ID
+GET {{url}}/api/users/1
+
+###
+
+# Create new user
+POST {{url}}/api/users
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "username": "testuser",
+  "password_hash": "hashed_password_here",
+  "first_name": "John",
+  "last_name": "Doe"
+}
+
+###
+
+# Update user
+PUT {{url}}/api/users/1
+Content-Type: application/json
+
+{
+  "email": "updated@example.com",
+  "first_name": "Jane"
+}
+
+###
+
+# Delete user
+DELETE {{url}}/api/users/1
